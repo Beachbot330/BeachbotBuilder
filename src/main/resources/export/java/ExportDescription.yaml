@@ -305,6 +305,10 @@ Instructions:
 
   Command:
     Defaults: "Command,None"
+  BBCommand:
+    Defaults: "Command,None"
+  AutoSpreadSheetCommand:
+    Defaults: "Command,None"
   Command Group:
     Defaults: "Command,None"
   PID Command:

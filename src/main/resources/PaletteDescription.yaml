@@ -695,6 +695,30 @@ Palette:
             name: Button on SmartDashboard
             default: true
       - !Component
+        name: BBCommand
+        type: Command
+        help: A BeachBot command specifies an action that the robot can perform.
+        properties:
+          - !TypeSelectionProperty
+            name: Requires
+            type: Subsystem
+            default: None
+          - !BooleanProperty
+            name: Button on SmartDashboard
+            default: true
+      - !Component
+        name: AutoSpreadSheetCommand
+        type: Command
+        help: A BeachBot AutoSpreadSheetCommand command specifies an action that the robot can perform.
+        properties:
+          - !TypeSelectionProperty
+            name: Requires
+            type: Subsystem
+            default: None
+          - !BooleanProperty
+            name: Button on SmartDashboard
+            default: true
+      - !Component
         name: PID Command
         type: Command
         help: A command that uses a PID controller to perform its desired action.

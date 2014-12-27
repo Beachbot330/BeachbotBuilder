@@ -84,6 +84,24 @@
     isFinished: ${exporter-path}SetpointCommand-isFinished.java
   variables:
     command-name: ${command.name}
+#elseif($command.base.name == "BBCommand")
+- !File
+  export: $package-path/commands/#class($command.name).java
+  source: ${exporter-path}BBCommand.java
+  update: Modify
+  modifications:
+    requires: ${exporter-path}Command-requires.java
+  variables:
+    command-name: ${command.name}
+#elseif($command.base.name == "AutoSpreadSheetCommand")
+- !File
+  export: $package-path/commands/#class($command.name).java
+  source: ${exporter-path}AutoSpreadSheetCommand.java
+  update: Modify
+  modifications:
+    requires: ${exporter-path}Command-requires.java
+  variables:
+    command-name: ${command.name}
 #else
 - !File
   export: $package-path/commands/#class($command.name).java
