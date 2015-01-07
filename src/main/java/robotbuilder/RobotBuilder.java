@@ -16,7 +16,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author brad
  */
 public class RobotBuilder {
-    public static String VERSION = "1.5";
+    public static String VERSION = "1.5BB";
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
