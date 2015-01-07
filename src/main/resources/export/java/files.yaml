@@ -93,13 +93,11 @@
     requires: ${exporter-path}Command-requires.java
   variables:
     command-name: ${command.name}
-#elseif($command.base.name == "AutoSpreadSheetCommand")
+#elseif($command.base.name == "AutoCommand")
 - !File
-  export: $package-path/commands/#class($command.name).java
-  source: ${exporter-path}AutoSpreadSheetCommand.java
+  export: $package-path/commands/autocommands/#class($command.name).java
+  source: ${exporter-path}AutoCommand.java
   update: Modify
-  modifications:
-    requires: ${exporter-path}Command-requires.java
   variables:
     command-name: ${command.name}
 #else

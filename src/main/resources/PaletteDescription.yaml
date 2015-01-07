@@ -194,7 +194,7 @@ Palette:
         help: Your Robot!
         properties:
           - !TypeSelectionProperty
-            name: Autonomous Command
+            name: Default Autonomous Command
             type: Command
             default: None
           - !IntegerProperty
@@ -707,16 +707,15 @@ Palette:
             name: Button on SmartDashboard
             default: true
       - !Component
-        name: AutoSpreadSheetCommand
+        name: AutoCommand
         type: Command
-        help: A BeachBot AutoSpreadSheetCommand command specifies an action that the robot can perform.
+        help: An AutoCommand command specifies an autonomous action that can be selected from a Sendable Chooser on the dashboard.
         properties:
-          - !TypeSelectionProperty
-            name: Requires
-            type: Subsystem
-            default: None
           - !BooleanProperty
             name: Button on SmartDashboard
+            default: false
+          - !BooleanProperty
+            name: Add to SendableChooser
             default: true
       - !Component
         name: PID Command

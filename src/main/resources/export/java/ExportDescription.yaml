@@ -307,7 +307,7 @@ Instructions:
     Defaults: "Command,None"
   BBCommand:
     Defaults: "Command,None"
-  AutoSpreadSheetCommand:
+  AutoCommand:
     Defaults: "Command,None"
   Command Group:
     Defaults: "Command,None"

@@ -139,8 +139,8 @@ public class RobotTree extends JPanel implements TreeSelectionListener {
         root.add(new RobotComponent("Operator Interface", Palette.getInstance().getItem("OI"), this));
         RobotComponent commands = new RobotComponent("Commands", Palette.getInstance().getItem("Commands"), this);
         root.add(commands);
-        commands.add(new RobotComponent("Autonomous Command", Palette.getInstance().getItem("Command"), this));
-        root.getProperty("Autonomous Command")._setValue("Autonomous Command");
+        commands.add(new RobotComponent("Default Autonomous Command", Palette.getInstance().getItem("Command"), this));
+        root.getProperty("Default Autonomous Command")._setValue("Autonomous Command");
 	return root;
     }
     
