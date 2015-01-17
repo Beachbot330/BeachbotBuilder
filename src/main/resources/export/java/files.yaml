@@ -56,7 +56,7 @@
 #foreach ($command in $commands)
 #if ($command.base.name == "Command Group")
 - !File
-  export: $package-path/commands/#class($command.name).java
+  export: $package-path/commands/commandgroups/#class($command.name).java
   source: ${exporter-path}CommandGroup.java
   update: None
   variables:
@@ -82,15 +82,6 @@
     requires: ${exporter-path}Command-requires.java
     initialize: ${exporter-path}SetpointCommand-initialize.java
     isFinished: ${exporter-path}SetpointCommand-isFinished.java
-  variables:
-    command-name: ${command.name}
-#elseif($command.base.name == "BBCommand")
-- !File
-  export: $package-path/commands/#class($command.name).java
-  source: ${exporter-path}BBCommand.java
-  update: Modify
-  modifications:
-    requires: ${exporter-path}Command-requires.java
   variables:
     command-name: ${command.name}
 #elseif($command.base.name == "AutoCommand")

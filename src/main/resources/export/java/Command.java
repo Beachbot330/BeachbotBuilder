@@ -4,13 +4,13 @@ package ${package}.commands;
 
 #set($command = $helper.getByName($command-name, $robot))
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.BBCommand;
 import ${package}.Robot;
 
 /**
  *
  */
-public class  #class($command.name) extends Command {
+public class  #class($command.name) extends BBCommand {
 
     public #class($command.name)() {
         // Use requires() here to declare subsystem dependencies

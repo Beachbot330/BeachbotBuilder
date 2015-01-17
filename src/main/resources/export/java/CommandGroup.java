@@ -1,13 +1,13 @@
 #header()
 
-package ${package}.commands;
+package ${package}.commands.commandgroups;
 #set($command = $helper.getByName($command-name, $robot))
-import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.BBCommandGroup;
 
 /**
  *
  */
-public class #class($command.name) extends CommandGroup {
+public class #class($command.name) extends BBCommandGroup {
     
     public  #class($command.name)() {
         // Add Commands here:
