@@ -97,7 +97,7 @@ public class MainFrame extends JFrame {
         JSplitPane robotStuff = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, robotTree, propertiesAndHelp);
         robotStuff.setDividerLocation(getWidth()/5);
         JSplitPane allStuff = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,palette,robotStuff);
-        allStuff.setDividerLocation(getWidth()/5);
+        allStuff.setDividerLocation(170);
 
         add(allStuff);
         
