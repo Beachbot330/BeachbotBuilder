@@ -172,6 +172,12 @@ Instructions:
 
               #variable($Name).setInvertedMotor(RobotDrive.MotorType.kRearRight, true);#end
               
+  Dual Speed Controller:
+    Defaults: "Component,None"
+    ClassName: "DualSpeedController"
+    Import: "import org.usfirst.frc330.wpilibj.DualSpeedController;"
+    Construction: "#variable($Name) = new ${ClassName}(#variable($Motor1), #variable($Motor2), ${Motor1_Inverted}, ${Motor2_Inverted});"
+
   Robot Drive 4:
     Defaults: "Component,None"
     ClassName: "RobotDrive"

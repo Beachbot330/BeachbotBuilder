@@ -152,6 +152,9 @@ Validators:
   - !DistinctValidator
     name: RobotDrive4
     fields: ["Left Front Motor", "Left Rear Motor", "Right Front Motor", "Right Rear Motor"]
+  - !DistinctValidator
+    name: DualSpeedController
+    fields: ["Motor1", "Motor2"]
   - !ExistsValidator
     name: ChildDropdownSelected
     ignore: [null, "null", "", 0, 1, 2, 3, "No Choices Available", "None"]
@@ -461,6 +464,28 @@ Palette:
           - !DoubleProperty
             name: Safety Expiration Time
             default: .1
+      - !Component
+        name: Dual Speed Controller
+        type: Controller
+        supports: {PIDOutput: 2}
+        help: DualSpeedController controls two SpeedControllers as one.
+        properties:
+          - !ChildSelectionProperty
+            name: Motor1
+            type: PIDOutput
+            validators: [DualSpeedController, ChildDropdownSelected]
+            default: 0
+          - !BooleanProperty
+            name: Motor1 Inverted
+            default: false
+          - !ChildSelectionProperty
+            name: Motor2
+            type: PIDOutput
+            validators: [DualSpeedController, ChildDropdownSelected]
+            default: 1
+          - !BooleanProperty
+            name: Motor2 Inverted
+            default: false
 
   - Sensors:
       - !Component
@@ -589,7 +614,6 @@ Palette:
             choices: ["Victor", "Jaguar", "Talon", "VictorSP", "TalonSRX"]
             default: "Talon"
           #PWMOutput("Output")
-
       - !Component
         name: CAN Jaguar
         type: PIDOutput
