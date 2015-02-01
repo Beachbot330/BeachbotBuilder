@@ -177,6 +177,7 @@ Instructions:
     ClassName: "DualSpeedController"
     Import: "import org.usfirst.frc330.wpilibj.DualSpeedController;"
     Construction: "#variable($Name) = new ${ClassName}(#variable($Motor1), #variable($Motor2), ${Motor1_Inverted}, ${Motor2_Inverted});"
+    LiveWindow: "LiveWindow.addActuator(\"$Subsystem\", \"$Short_Name\", #variable($Name));"
 
   Robot Drive 4:
     Defaults: "Component,None"
