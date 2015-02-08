@@ -602,6 +602,10 @@ Palette:
         properties:
           #DigitalChannel("Ping")
           #DigitalChannel("Echo")
+      - !Component
+        name: PowerDistributionPanel
+        type: Sensor
+        help: Measure the current and voltage from the CTRE Power Distribution Panel.
 
   - Actuators:
       - !Component

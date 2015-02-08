@@ -277,6 +277,11 @@ Instructions:
   Spike:
     Defaults: "RelayOutput,Component,None"
     ClassName: "Relay"
+  PowerDistributionPanel:
+    Defaults: "Component,None"
+    ClassName: "PowerDistributionPanel"
+    Construction: "#variable($Name) = new ${ClassName}();"
+    LiveWindow: "LiveWindow.addActuator(\"$Subsystem\", \"$Short_Name\", #variable($Name));"
 
   Compressor:
     Defaults: "Component,None"
