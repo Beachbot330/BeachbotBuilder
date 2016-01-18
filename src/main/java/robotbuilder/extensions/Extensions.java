@@ -72,8 +72,8 @@ public class Extensions {
         Stream.of(extensionsFolder.listFiles())
                 .filter(f -> f.isDirectory())
                 .filter(d -> hasRequiredFiles(d))
-                .filter(d -> Stream.of(d.listFiles()).
-                                    allMatch(f -> isValidFile(f)))
+//                .filter(d -> Stream.of(d.listFiles()).
+//                                    allMatch(f -> isValidFile(f)))
                 .map(d -> makeExtensionComponent(d))
                 .forEach(l::add);
         scannedComponents = true;
