@@ -69,6 +69,10 @@ filters:
   - &id003 !Filter
     regex: \s+
 
+  # Matches implements XYZ
+  - &id004 !Filter
+    regex: implements(\w*)
+
 parsers:
 
   # Java superclass parser that matches:
@@ -84,6 +88,7 @@ parsers:
       - *id001
       - *id002
       - *id003
+      - *id004
 
   # C++ superclass parser (for header files) that matches:
   #   class Foo : public X {
