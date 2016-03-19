@@ -45,11 +45,12 @@ public class ExportFile {
         System.out.println("  New type: " + newType);
 
         // Export
-        if (!export.exists() || update.equals("Overwrite") || !newType.equals(oldType)) {
+        if (!export.exists() || update.equals("Overwrite") || (!newType.equals(oldType) && !oldType.equals("ShootCommand"))) {
             System.out.println("Overwriting " + export);
             try (FileWriter out = new FileWriter(export)) {
                 out.write(exporter.evalResource(source, fileContext));
-            }
+                out.close();
+            } 
         } else if (update.equals("Modify")) {
             System.out.println("Modifying " + export);
             String file = exporter.openFile(export.getAbsolutePath());
@@ -64,6 +65,7 @@ public class ExportFile {
             try (FileWriter out = new FileWriter(export)) {
                 file = file.replaceAll("\r\n?|\n", "\r\n");
                 out.write(file);
+                out.close();
             }
         }
     }
@@ -72,6 +74,7 @@ public class ExportFile {
         File backup = new File(export.getAbsoluteFile() + "~");
         try (FileWriter out = new FileWriter(backup)) {
             out.write(exporter.openFile(export.getAbsolutePath()));
+            out.close();
         }
     }
 

@@ -359,7 +359,8 @@ public class RobotTree extends JPanel {
         try {
             FileReader source = new FileReader(path);
             load(source);
-        } catch (FileNotFoundException ex) {
+			source.close();
+        } catch (IOException ex) {
             Logger.getLogger(RobotTree.class.getName()).log(Level.SEVERE, null, ex);
         }
         setFilePath(path.getAbsolutePath());
